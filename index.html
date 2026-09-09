@@ -154,10 +154,16 @@
 
   /* ---------- Switch ---------- */
   .switch-row {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 44px);
+    transform: translateX(-50%);
+
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-top: 34px;
+    margin-top: 50px;
+    z-index: 10;
   }
 
   .switch-label {
@@ -333,7 +339,10 @@
 
     .heading-wrap { max-width: 680px; }
     .heading { font-size: 46px; line-height: 1.12; }
-    .switch-row { margin-top: 42px; gap: 20px; }
+    .switch-row {
+      top: calc(50% + 70px);
+      gap: 20px;
+    }
     .switch-label { font-size: 12px; letter-spacing: 0.28em; }
     .below-row { max-width: 420px; margin-top: 26px; }
     .cta-prompt { font-size: 12px; }
@@ -350,7 +359,10 @@
 
     .heading-wrap { max-width: 880px; }
     .heading { font-size: 60px; line-height: 1.14; }
-    .switch-row { margin-top: 46px; gap: 18px; }
+    .switch-row {
+      top: calc(50% + 70px);
+      gap: 18px;
+    }
     .below-row { max-width: 460px; margin-top: 22px; }
   }
 
@@ -374,7 +386,7 @@
   <main class="center">
     <div class="heading-wrap">
       <h1 class="heading state-off">SEE THINGS<br>DIFFERENTLY.</h1>
-      <h1 class="heading state-on">THE LYTESCAPE<br>DIGITAL EXPERIENCE<br>IS LAUNCHING SOON.</h1>
+      <h1 class="heading state-on">THE LYTESCAPE<br>DIGITAL EXPERIENCE IS LAUNCHING SOON.</h1>
     </div>
 
     <div class="switch-row">
