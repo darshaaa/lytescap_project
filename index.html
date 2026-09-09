@@ -114,7 +114,7 @@
     position: relative;
     width: 100%;
     max-width: 320px;
-    min-height: 2.5em;
+    height: 120px;
   }
 
   .heading {
@@ -123,47 +123,34 @@
     line-height: 1.1;
     letter-spacing: -0.01em;
     color: #faf7f1;
-    transition: opacity 600ms var(--ease), transform 600ms var(--ease);
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 600ms var(--ease);
   }
 
   .heading.state-off {
     opacity: 1;
-    transform: translateY(0);
-  }
-
-  .heading.state-on {
-    opacity: 0;
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    transform: translateY(6px);
-    pointer-events: none;
+    pointer-events: auto;
   }
 
   .stage.is-on .heading.state-off {
     opacity: 0;
-    transform: translateY(-6px);
     pointer-events: none;
   }
 
   .stage.is-on .heading.state-on {
     opacity: 1;
-    position: relative;
-    transform: translateY(0);
     pointer-events: auto;
   }
 
   /* ---------- Switch ---------- */
   .switch-row {
-    position: absolute;
-    left: 50%;
-    top: calc(50% + 44px);
-    transform: translateX(-50%);
-
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-top: 50px;
-    z-index: 10;
+    margin-top: 34px;
   }
 
   .switch-label {
@@ -232,43 +219,36 @@
     width: 100%;
     max-width: 320px;
     margin-top: 20px;
-    min-height: 20px;
+    height: 92px;
   }
 
   .hint {
+    position: absolute;
+    top: 0; left: 0; right: 0;
     font-size: 11.5px;
     font-weight: 300;
     letter-spacing: 0.13em;
     color: rgba(244, 239, 230, 0.4);
-    transition: opacity 500ms var(--ease), transform 500ms var(--ease);
-  }
-
-  .hint {
     opacity: 1;
-    transform: translateY(0);
+    pointer-events: auto;
+    transition: opacity 500ms var(--ease);
   }
 
   .stage.is-on .hint {
     opacity: 0;
-    transform: translateY(-4px);
-    position: absolute;
-    top: 0; left: 0; right: 0;
     pointer-events: none;
   }
 
   .cta-block {
-    opacity: 0;
     position: absolute;
     top: 0; left: 0; right: 0;
-    transform: translateY(6px);
+    opacity: 0;
     pointer-events: none;
-    transition: opacity 550ms var(--ease) 150ms, transform 550ms var(--ease) 150ms;
+    transition: opacity 550ms var(--ease) 150ms;
   }
 
   .stage.is-on .cta-block {
     opacity: 1;
-    position: relative;
-    transform: translateY(0);
     pointer-events: auto;
   }
 
@@ -337,12 +317,9 @@
       --knob: 36px;
     }
 
-    .heading-wrap { max-width: 680px; }
+    .heading-wrap { max-width: 680px; height: 165px; }
     .heading { font-size: 46px; line-height: 1.12; }
-    .switch-row {
-      top: calc(50% + 70px);
-      gap: 20px;
-    }
+    .switch-row { margin-top: 42px; gap: 20px; }
     .switch-label { font-size: 12px; letter-spacing: 0.28em; }
     .below-row { max-width: 420px; margin-top: 26px; }
     .cta-prompt { font-size: 12px; }
@@ -357,12 +334,9 @@
       --knob: 26px;
     }
 
-    .heading-wrap { max-width: 880px; }
+    .heading-wrap { max-width: 880px; height: 215px; }
     .heading { font-size: 60px; line-height: 1.14; }
-    .switch-row {
-      top: calc(50% + 70px);
-      gap: 18px;
-    }
+    .switch-row { margin-top: 46px; gap: 18px; }
     .below-row { max-width: 460px; margin-top: 22px; }
   }
 
@@ -386,7 +360,7 @@
   <main class="center">
     <div class="heading-wrap">
       <h1 class="heading state-off">SEE THINGS<br>DIFFERENTLY.</h1>
-      <h1 class="heading state-on">THE LYTESCAPE<br>DIGITAL EXPERIENCE IS LAUNCHING SOON.</h1>
+      <h1 class="heading state-on">THE LYTESCAPE<br>DIGITAL EXPERIENCE<br>IS LAUNCHING SOON.</h1>
     </div>
 
     <div class="switch-row">
