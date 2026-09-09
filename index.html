@@ -59,7 +59,7 @@
   .bg-on {
     z-index: 2;
     opacity: 0;
-    transition: opacity 1300ms var(--ease);
+    transition: opacity 3000ms var(--ease);
   }
 
   .stage.is-on .bg-on {
@@ -71,7 +71,7 @@
     inset: 0;
     z-index: 3;
     background: radial-gradient(ellipse at 50% 42%, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.50) 68%, rgba(0,0,0,0.70) 100%);
-    transition: opacity 1300ms var(--ease);
+    transition: opacity 3000ms var(--ease);
   }
 
   .stage.is-on .scrim {
@@ -113,21 +113,23 @@
   .heading-wrap {
     position: relative;
     width: 100%;
-    max-width: 320px;
-    height: 120px;
+    max-width: min(94vw, 520px);
+    height: 170px;
   }
 
   .heading {
     font-weight: 600;
-    font-size: 34px;
-    line-height: 1.1;
+    font-size: 30px;
+    line-height: 1.22;
     letter-spacing: -0.01em;
     color: #faf7f1;
     position: absolute;
-    top: 0; left: 0; right: 0;
+    top: 50%;
+    left: 0; right: 0;
+    transform: translateY(-50%);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 600ms var(--ease);
+    transition: opacity 700ms var(--ease) 900ms;
   }
 
   .heading.state-off {
@@ -150,7 +152,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-top: 34px;
+    margin-top: 48px;
   }
 
   .switch-label {
@@ -244,7 +246,7 @@
     top: 0; left: 0; right: 0;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 550ms var(--ease) 150ms;
+    transition: opacity 550ms var(--ease) 1400ms;
   }
 
   .stage.is-on .cta-block {
@@ -317,9 +319,9 @@
       --knob: 36px;
     }
 
-    .heading-wrap { max-width: 680px; height: 165px; }
-    .heading { font-size: 46px; line-height: 1.12; }
-    .switch-row { margin-top: 42px; gap: 20px; }
+    .heading-wrap { max-width: min(92vw, 920px); height: 210px; }
+    .heading { font-size: 46px; line-height: 1.2; }
+    .switch-row { margin-top: 58px; gap: 20px; }
     .switch-label { font-size: 12px; letter-spacing: 0.28em; }
     .below-row { max-width: 420px; margin-top: 26px; }
     .cta-prompt { font-size: 12px; }
@@ -334,9 +336,15 @@
       --knob: 26px;
     }
 
-    .heading-wrap { max-width: 880px; height: 215px; }
-    .heading { font-size: 60px; line-height: 1.14; }
-    .switch-row { margin-top: 46px; gap: 18px; }
+    .heading-wrap { max-width: min(88vw, 1200px); height: 250px; }
+    .heading { font-size: 60px; line-height: 1.18; }
+    .stay-tuned {
+  font-size: 40px;
+  font-weight: 400;
+  display: inline-block;
+  transform: translateY(8px);
+}
+    .switch-row { margin-top: 64px; gap: 18px; transform: translateY(-25px); }
     .below-row { max-width: 460px; margin-top: 22px; }
   }
 
@@ -359,8 +367,12 @@
 
   <main class="center">
     <div class="heading-wrap">
-      <h1 class="heading state-off">SEE THINGS<br>DIFFERENTLY.</h1>
-      <h1 class="heading state-on">THE LYTESCAPE<br>DIGITAL EXPERIENCE<br>IS LAUNCHING SOON.</h1>
+      <h1 class="heading state-off">LIGHT IS MORE<br>THAN WHAT YOU SEE</h1>
+      <h1 class="heading state-on">
+  Experience Light, Digitally Reimagined<br />
+  Something Brilliant is coming... <br />
+  <span class="stay-tuned">Stay Tuned !</span>
+</h1>
     </div>
 
     <div class="switch-row">
